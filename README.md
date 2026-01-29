@@ -2,7 +2,7 @@
 
 ---
 
-## Project 1: [Manhattan Skyline Soldered]
+## Project 1: Manhattan Skyline Soldered
 
 NYC skyline sculpture created using a protoboard, a 12 pin header, a brass rod, a soldering iron, and lead solder. 
 
