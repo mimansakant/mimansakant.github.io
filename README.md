@@ -12,6 +12,11 @@ NYC skyline sculpture created using a protoboard, a 12 pin header, a brass rod, 
 
 ![Project Image 2](images/skyline2.jpg)
 
+![Project Image 1](images/skyline3.jpg)
+
+![Project Image 2](images/skyline4.jpg)
+
+
 ---
 
 ### Reflection
