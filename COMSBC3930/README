@@ -1,1 +1,52 @@
-readme
+# PCB Jet – 555 Timer LED Flasher
+
+This project builds on a provided 555 timer configuration (555timerCES) and focuses on PCB layout, custom board shaping, CNC milling, and physical assembly.
+
+## Components Used
+
+- 555 Timer IC (through-hole)
+- Three resistors
+- Two ceramic capacitors
+- Yellow LED
+- CR2032 coin cell battery
+- Coin cell battery holder
+- Copper PCB
+
+## Project Overview
+
+The circuit uses a 555 timer configured to flash an LED. The yellow LED represents a flame coming from the bottom of the jet, turning a standard blinking LED circuit into a narrative object. The flashing frequency is controlled by the resistor-capacitor network connected to the 555 timer.
+
+## PCB Layout and Design
+
+Designing the PCB layout in KiCad required:
+
+- Routing traces while avoiding overlaps
+- Maintaining clean electrical connections
+- Ensuring sufficient spacing for CNC milling tolerances
+- Planning drill hole placement for through-hole components
+- Designing a custom jet-shaped board outline
+
+While the 555 timer configuration was provided, I planned and placed all components myself and routed the board layout from scratch.
+
+## CNC Milling Process
+
+After generating the necessary fabrication files, the PCB was milled using the Carvey CNC machine. Although many settings were pre-configured, I learned how CNC milling works in practice, including:
+
+- The difference between engraving traces, drilling holes, and cutting the board outline
+- How different drill bits are used for electrical routing, drill holes, and perimeter cuts
+- How cut depth affects trace isolation
+- How small physical variations (such as warped copper boards) impact milling accuracy
+
+We encountered issues with a warped PCB, which we resolved by properly clamping the board to ensure even contact during milling.
+
+## Soldering and Assembly
+
+After milling, I soldered all through-hole components onto the board. This required careful attention to orientation, especially for the 555 timer and LED polarity, and maintaining clean solder joints.
+
+During assembly, I accidentally confused 470kΩ and 4.7kΩ resistors. Correcting this required desoldering components without damaging the board or lifting copper traces, which gave me additional practice in rework and component handling.
+
+## Circuit Behavior
+
+In astable mode, the 555 timer continuously cycles between HIGH and LOW output states as a capacitor charges and discharges through resistors. The selected resistor and capacitor values determine the oscillation frequency, which sets the LED’s blinking speed.
+
+Because the circuit is powered by a CR2032 coin cell battery, voltage and current limitations influenced component selection, particularly the LED choice and overall power draw.
