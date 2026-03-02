@@ -50,3 +50,25 @@ During assembly, I accidentally confused 470kΩ and 4.7kΩ resistors. Correcting
 In astable mode, the 555 timer continuously cycles between HIGH and LOW output states as a capacitor charges and discharges through resistors. The selected resistor and capacitor values determine the oscillation frequency, which sets the LED’s blinking speed.
 
 Because the circuit is powered by a CR2032 coin cell battery, voltage and current limitations influenced component selection, particularly the LED choice and overall power draw.
+
+
+
+
+# ESP32 Rainfall
+
+How It Works
+The screen is split into two zones:
+
+Cloud zone (top 60px): 3 clouds drift slowly from right to left. Each cloud is drawn as a base ellipse with randomized bumps, using a fixed per-cloud seed so the shape stays consistent as it moves.
+Rain zone (60–240px): 14 rain streams (3 drops each) fall at speeds between 1.4–3.3px/frame. 6 poem drops also fall through this zone at 0.45–1.0px/frame, each carrying one randomly selected poem. Both rain and poem drops are clipped to start below the nearest cloud's bottom edge.
+
+Every frame is rendered into a TFT_eSprite buffer and pushed to the display in one call to avoid flicker.
+
+Customization
+
+Poems — edit the POEMS[] struct array in rainfall.ino
+Number of poem drops — change NUM_DROPS (default: 6)
+Rain density — change NUM_STREAMS (default: 14) and DROPS_PER_STREAM (default: 3)
+Cloud count/size — change NUM_CLOUDS (default: 3) and CLOUD_ZONE (default: 60px)
+Fall speeds — adjust speed ranges in initStreak() and initDrop()
+Colors — modify SKY_COL, CLOUD_CLR, RAIN_CLR, and TEXT_CLR at the top of the file
