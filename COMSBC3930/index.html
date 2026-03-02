@@ -8,11 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
             --bg-dark: #0a0a0a;
@@ -32,15 +28,12 @@
             overflow-x: hidden;
         }
 
-        /* Background effect */
         body::before {
             content: '';
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background:
                 radial-gradient(circle at 20% 30%, rgba(74, 158, 255, 0.04) 0%, transparent 50%),
                 radial-gradient(circle at 80% 70%, rgba(61, 127, 217, 0.03) 0%, transparent 50%);
             pointer-events: none;
@@ -55,7 +48,6 @@
             z-index: 1;
         }
 
-        /* Header */
         header {
             margin-bottom: 6rem;
             animation: fadeInUp 0.8s ease-out;
@@ -80,7 +72,6 @@
             margin: 2rem 0;
         }
 
-        /* Project Card */
         .project {
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -91,13 +82,9 @@
             transition: border-color 0.3s ease;
         }
 
-        .project:hover {
-            border-color: var(--accent-dim);
-        }
+        .project:hover { border-color: var(--accent-dim); }
 
-        .project-header {
-            margin-bottom: 2.5rem;
-        }
+        .project-header { margin-bottom: 2.5rem; }
 
         h2 {
             font-family: 'Playfair Display', serif;
@@ -115,7 +102,6 @@
             max-width: 800px;
         }
 
-        /* Image Gallery */
         .image-gallery {
             margin: 2.5rem 0;
             position: relative;
@@ -132,23 +118,10 @@
             scrollbar-color: var(--accent) var(--bg-card);
         }
 
-        .gallery-container::-webkit-scrollbar {
-            height: 6px;
-        }
-
-        .gallery-container::-webkit-scrollbar-track {
-            background: var(--bg-card);
-            border-radius: 3px;
-        }
-
-        .gallery-container::-webkit-scrollbar-thumb {
-            background: var(--accent);
-            border-radius: 3px;
-        }
-
-        .gallery-container::-webkit-scrollbar-thumb:hover {
-            background: var(--accent-dim);
-        }
+        .gallery-container::-webkit-scrollbar { height: 6px; }
+        .gallery-container::-webkit-scrollbar-track { background: var(--bg-card); border-radius: 3px; }
+        .gallery-container::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+        .gallery-container::-webkit-scrollbar-thumb:hover { background: var(--accent-dim); }
 
         .gallery-item {
             flex: 0 0 auto;
@@ -161,9 +134,7 @@
             cursor: pointer;
         }
 
-        .gallery-item:hover {
-            transform: scale(1.02);
-        }
+        .gallery-item:hover { transform: scale(1.02); }
 
         .gallery-item img,
         .gallery-item video {
@@ -182,7 +153,6 @@
             opacity: 0.7;
         }
 
-        /* Reflection Section */
         .reflection {
             margin-top: 3rem;
             padding-top: 2.5rem;
@@ -206,45 +176,23 @@
             max-width: 800px;
         }
 
-        /* Animations */
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to   { opacity: 1; transform: translateY(0); }
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
-            .container {
-                padding: 2rem 1.5rem;
-            }
-
-            header {
-                margin-bottom: 4rem;
-            }
-
-            .project {
-                padding: 2rem 1.5rem;
-            }
-
-            .gallery-item {
-                width: clamp(240px, 70vw, 320px);
-            }
+            .container { padding: 2rem 1.5rem; }
+            header { margin-bottom: 4rem; }
+            .project { padding: 2rem 1.5rem; }
+            .gallery-item { width: clamp(240px, 70vw, 320px); }
         }
 
-        /* Lightbox for images */
         .lightbox {
             display: none;
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             background: rgba(0, 0, 0, 0.95);
             z-index: 1000;
             align-items: center;
@@ -252,9 +200,7 @@
             animation: fadeIn 0.3s ease;
         }
 
-        .lightbox.active {
-            display: flex;
-        }
+        .lightbox.active { display: flex; }
 
         .lightbox img {
             max-width: 90%;
@@ -265,8 +211,7 @@
 
         .lightbox-close {
             position: absolute;
-            top: 2rem;
-            right: 2rem;
+            top: 2rem; right: 2rem;
             color: var(--text-primary);
             font-size: 2rem;
             cursor: pointer;
@@ -277,30 +222,29 @@
             transition: color 0.2s ease;
         }
 
-        .lightbox-close:hover {
-            color: var(--accent);
-        }
+        .lightbox-close:hover { color: var(--accent); }
 
         @keyframes fadeIn {
             from { opacity: 0; }
-            to { opacity: 1; }
+            to   { opacity: 1; }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
+    <div class="container">                             <!-- CONTAINER opens -->
+
         <header>
             <h1>Creative Embedded Systems Portfolio</h1>
             <div class="divider"></div>
         </header>
 
-        <!-- Project 1: NYC Skyline -->
-        <div class="project">
+        <!-- ── Project 1: Manhattan Skyline ── -->
+        <div class="project">                           <!-- PROJECT 1 opens -->
             <div class="project-header">
                 <h2>Manhattan Skyline Soldered</h2>
                 <p class="project-subtitle">
-                    NYC skyline sculpture created using a protoboard, a 12 pin header, a brass rod, 
+                    NYC skyline sculpture created using a protoboard, a 12 pin header, a brass rod,
                     a soldering iron, and lead solder.
                 </p>
             </div>
@@ -323,83 +267,80 @@
             <div class="reflection">
                 <h3>Reflection</h3>
                 <p>
-                    It was really cool learning how to solder for the first time, and it ended up being 
-                    more intuitive than I expected. Most of my previous hands-on work has been more mechanical 
-                    and force-based, like drilling, so working delicately with small pins and tiny holes felt 
+                    It was really cool learning how to solder for the first time, and it ended up being
+                    more intuitive than I expected. Most of my previous hands-on work has been more mechanical
+                    and force-based, like drilling, so working delicately with small pins and tiny holes felt
                     very different.
                 </p>
                 <p>
-                    I also enjoyed how open-ended the project felt. Even with relatively simple components, 
-                    there were a lot of creative possibilities. This made me interested in exploring other 
+                    I also enjoyed how open-ended the project felt. Even with relatively simple components,
+                    there were a lot of creative possibilities. This made me interested in exploring other
                     contexts where soldering is used in more artistic ways.
                 </p>
             </div>
-        </div>
+        </div>                                          <!-- PROJECT 1 closes -->
 
-    <!-- Project 2: Jet -->
-        <div class="project">
-    <div class="project-header">
-        <h2>Flashing Jet PCB</h2>
-        <p class="project-subtitle">
-            Custom jet-shaped PCB implementing a 555 timer astable circuit. 
-            A yellow LED represents a flame coming from the bottom of the jet, 
-            powered by a CR2032 coin cell battery.
-        </p>
-    </div>
-
-    <div class="image-gallery">
-            <div class="gallery-container">
-                <div class="gallery-item">
-                    <video autoplay loop muted playsinline>
-                        <source src="images/jet5.mp4.gif" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="images/jet1.jpg" alt="Jet PCB - View 1">
-                </div>
-                <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="images/jet2.jpg" alt="Jet PCB - View 2">
-                </div>
-                <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="images/jet3.jpg" alt="Jet PCB - View 3">
-                </div>
+        <!-- ── Project 2: Flashing Jet PCB ── -->
+        <div class="project">                           <!-- PROJECT 2 opens -->
+            <div class="project-header">
+                <h2>Flashing Jet PCB</h2>
+                <p class="project-subtitle">
+                    Custom jet-shaped PCB implementing a 555 timer astable circuit.
+                    A yellow LED represents a flame coming from the bottom of the jet,
+                    powered by a CR2032 coin cell battery.
+                </p>
             </div>
-            <p class="gallery-hint">← Scroll to view all images →</p>
-        </div>
 
-    <div class="reflection">
-        <h3>Overview</h3>
-        <p>
-            This project involved designing and routing a 555 timer LED flasher circuit in KiCad, 
-            milling the PCB on a Carvey CNC machine, and soldering all through-hole components 
-            including the timer IC, resistors, ceramic capacitors, LED, and battery holder. 
-            The blinking LED simulates a jet engine flame, bringing motion and narrative 
-            into an otherwise functional circuit.
-        </p>
+            <div class="image-gallery">
+                <div class="gallery-container">
+                    <div class="gallery-item">
+                        <video autoplay loop muted playsinline>
+                            <source src="images/jet5.mp4.gif" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(this)">
+                        <img src="images/jet1.jpg" alt="Jet PCB - View 1">
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(this)">
+                        <img src="images/jet2.jpg" alt="Jet PCB - View 2">
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(this)">
+                        <img src="images/jet3.jpg" alt="Jet PCB - View 3">
+                    </div>
+                </div>
+                <p class="gallery-hint">← Scroll to view all images →</p>
+            </div>
 
-        <p>
-            A detailed breakdown of the design process, fabrication workflow, and circuit 
-            behavior can be found in the full project documentation.
-        </p>
-        <p>
-            <a href="/README.txt" style="color: var(--accent); text-decoration: none;">
-                → View Full Documentation
-            </a>
-        </p>
-    </div>
-</div>
+            <div class="reflection">
+                <h3>Overview</h3>
+                <p>
+                    This project involved designing and routing a 555 timer LED flasher circuit in KiCad,
+                    milling the PCB on a Carvey CNC machine, and soldering all through-hole components
+                    including the timer IC, resistors, ceramic capacitors, LED, and battery holder.
+                    The blinking LED simulates a jet engine flame, bringing motion and narrative
+                    into an otherwise functional circuit.
+                </p>
+                <p>
+                    A detailed breakdown of the design process, fabrication workflow, and circuit
+                    behavior can be found in the full project documentation.
+                </p>
+                <p>
+                    <a href="/README.txt" style="color: var(--accent); text-decoration: none;">
+                        → View Full Documentation
+                    </a>
+                </p>
+            </div>
+        </div>                                          <!-- PROJECT 2 closes -->
 
-    </div>
-    <!-- Project 3: Rainfall -->
-        <div class="project">
+        <!-- ── Project 3: Rainfall ── -->
+        <div class="project">                           <!-- PROJECT 3 opens -->
             <div class="project-header">
                 <h2>Rainfall</h2>
                 <p class="project-subtitle">
-                    A generative poetry installation running on the ESP32 TTGO T-Display. 
-                    Lines of poetry — assembled in real time from word banks themed around nature 
-                    and impermanence — fall like rain from pixel clouds and disappear before they 
-                    can be read twice.
+                    A generative poetry installation running on the ESP32 TTGO T-Display.
+                    Ten hand-written poems — themed around nature and impermanence — fall like rain
+                    from drifting pixel clouds and disappear before they can be read twice.
                 </p>
             </div>
 
@@ -415,16 +356,16 @@
             <div class="reflection">
                 <h3>Overview</h3>
                 <p>
-                    Installed in a hallway, <em>Rainfall</em> presents a tiny glowing screen in a dark 
-                    corridor — a lantern of language for passersby. The poem lines are never the same twice: 
-                    subjects, verbs, and objects are drawn from thematic word banks and assembled 
-                    procedurally, falling at varying speeds interleaved with animated raindrops. 
-                    No poem completes itself before vanishing.
+                    This project runs on the ESP32 TTGO T-Display and generates an animated rain scene
+                    with poems falling down the screen. Ten hand-written poems are randomly assigned to
+                    drops that fall at different speeds and positions, so the composition is always
+                    changing. It was installed in a hallway for the class exhibition.
                 </p>
                 <p>
-                    The piece is designed for the transitional nature of a hallway — people catch 
-                    fragments as they pass through, the same way you catch fragments of a conversation 
-                    through a closing door.
+                    I wanted the text to feel like it was part of the rain rather than just overlaid on
+                    it, so the poem lines fall alongside the raindrops and disappear off the bottom
+                    before finishing — which ended up working really well in a space where people are
+                    just passing through anyway.
                 </p>
                 <p>
                     <a href="#" style="color: var(--accent); text-decoration: none;">
@@ -432,9 +373,11 @@
                     </a>
                 </p>
             </div>
-        </div>
- </div>
-    <!-- Lightbox -->
+        </div>                                          <!-- PROJECT 3 closes -->
+
+    </div>                                              <!-- CONTAINER closes -->
+
+    <!-- Lightbox (sibling of .container, outside all projects) -->
     <div class="lightbox" id="lightbox" onclick="closeLightbox()">
         <button class="lightbox-close" onclick="closeLightbox()">✕</button>
         <img id="lightbox-img" src="" alt="">
@@ -443,27 +386,22 @@
     <script>
         function openLightbox(element) {
             const img = element.querySelector('img');
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = document.getElementById('lightbox-img');
-            
-            lightboxImg.src = img.src;
-            lightboxImg.alt = img.alt;
-            lightbox.classList.add('active');
+            if (!img) return;
+            document.getElementById('lightbox-img').src = img.src;
+            document.getElementById('lightbox-img').alt = img.alt;
+            document.getElementById('lightbox').classList.add('active');
         }
 
         function closeLightbox() {
-            const lightbox = document.getElementById('lightbox');
-            lightbox.classList.remove('active');
+            document.getElementById('lightbox').classList.remove('active');
         }
 
-        // Close on Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                closeLightbox();
-            }
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeLightbox();
         });
     </script>
 
     <a href="../" class="back-link">← Back to Home</a>
+
 </body>
 </html>
