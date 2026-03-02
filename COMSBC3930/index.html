@@ -288,12 +288,14 @@
     </style>
 </head>
 <body>
+
     <div class="container">
         <header>
             <h1>Creative Embedded Systems Portfolio</h1>
             <div class="divider"></div>
         </header>
 
+        <!-- Project 1: NYC Skyline -->
         <div class="project">
             <div class="project-header">
                 <h2>Manhattan Skyline Soldered</h2>
@@ -333,6 +335,8 @@
                 </p>
             </div>
         </div>
+
+    <!-- Project 2: Jet -->
         <div class="project">
     <div class="project-header">
         <h2>Flashing Jet PCB</h2>
@@ -387,6 +391,47 @@
 </div>
 
     </div>
+    <!-- Project 3: Rainfall -->
+        <div class="project">
+            <div class="project-header">
+                <h2>Rainfall</h2>
+                <p class="project-subtitle">
+                    A generative poetry installation running on the ESP32 TTGO T-Display. 
+                    Lines of poetry — assembled in real time from word banks themed around nature 
+                    and impermanence — fall like rain from pixel clouds and disappear before they 
+                    can be read twice.
+                </p>
+            </div>
+
+            <div class="image-gallery">
+                <div class="gallery-container">
+                    <div class="gallery-item" onclick="openLightbox(this)">
+                        <img src="images/rain2.jpg" alt="Rainfall - Installation view">
+                    </div>
+                </div>
+                <p class="gallery-hint">More images coming soon</p>
+            </div>
+
+            <div class="reflection">
+                <h3>Overview</h3>
+                <p>
+                    Installed in a hallway, <em>Rainfall</em> presents a tiny glowing screen in a dark 
+                    corridor — a lantern of language for passersby. The poem lines are never the same twice: 
+                    subjects, verbs, and objects are drawn from thematic word banks and assembled 
+                    procedurally, falling at varying speeds interleaved with animated raindrops. 
+                    No poem completes itself before vanishing.
+                </p>
+                <p>
+                    The piece is designed for the transitional nature of a hallway — people catch 
+                    fragments as they pass through, the same way you catch fragments of a conversation 
+                    through a closing door.
+                </p>
+                <p>
+                    <a href="#" style="color: var(--accent); text-decoration: none;">
+                        → View Full Documentation & Blog Post
+                    </a>
+                </p>
+            </div>
 
     <!-- Lightbox -->
     <div class="lightbox" id="lightbox" onclick="closeLightbox()">
