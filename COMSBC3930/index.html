@@ -377,6 +377,63 @@
                 </p>
             </div>
         </div>                                          <!-- PROJECT 3 closes -->
+            <!-- ── Project 4: Radio Building ── -->
+    <div class="project">
+        <div class="project-header">
+            <h2>Radio Building</h2>
+            <p class="project-subtitle">
+                A touch-sensitive architectural sculpture that tunes into live internet radio stations.
+                Five copper touch points — embedded in the facade of a 3D printed art deco building —
+                each trigger a different stream, while a double touch switches between two curated mood modes.
+            </p>
+        </div>
+    
+        <div class="image-gallery">
+            <div class="gallery-container">
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/radio1.jpg" alt="Radio Building - Full structure">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/radio2.jpg" alt="Radio Building - Touch points detail">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/radio3.jpg" alt="Radio Building - Internal wiring">
+                </div>
+            </div>
+            <p class="gallery-hint">← Scroll to view all images →</p>
+        </div>
+    
+        <div class="reflection">
+            <h3>Overview</h3>
+            <p>
+                Radio Building continues the skyline thread running through this portfolio —
+                where the first project rendered the Manhattan skyline in solder, this one
+                lets you tune into the city's frequencies by touching it. The structure is
+                a 3D printed art deco tower with tiered setbacks and a radio antenna spire,
+                referencing both the Chrysler Building and the form of a vintage tabletop radio.
+            </p>
+            <p>
+                Five copper tape touch points are inlaid flush into recessed window cutouts on
+                the building facade. Each is wired through channels inside the walls down to an
+                ESP32 in the hollow base, which reads the capacitive touch pins and sends the
+                signal over serial to a laptop running a Python audio script. The speaker is
+                hidden behind a 3D printed lattice grille on the front of the building.
+            </p>
+            <p>
+                The system has two modes — calm and energetic — toggled by touching any two
+                windows simultaneously. In calm mode, the stations span classical, ambient,
+                and drone. In energetic mode they shift to indie, spy jazz, world, and celtic.
+                Switching modes stops the current stream and resets the station state, so the
+                building feels like it has changed character entirely.
+            </p>
+            <p>
+                <a href="#" style="color: var(--accent); text-decoration: none;">
+                    → View Full Documentation & Code
+                </a>
+            </p>
+        </div>
+    </div>
+    <!-- ── Project 4 closes ── -->
 
     </div>                                              <!-- CONTAINER closes -->
 
