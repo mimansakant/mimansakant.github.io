@@ -434,6 +434,121 @@
         </div>
     </div>
     <!-- ── Project 4 closes ── -->
+        <!-- ── Project 5: Meownet ── -->
+        <div class="project">
+            <div class="project-header">
+                <h2>Meownet — A Self-Balancing Pachinko Cat</h2>
+                <p class="project-subtitle">
+                    A runtime-monitored pachinko machine that watches where the balls fall and
+                    physically intervenes when the distribution gets too lopsided. Built by a team
+                    of five over two and a half weeks using three ESP32 nodes communicating over
+                    ESP-NOW, with stepper-driven deflection arms and an animated cat eye on a
+                    TTGO T-Display.
+                </p>
+            </div>
+
+            <div class="image-gallery">
+                <div class="gallery-container">
+                    <div class="gallery-item" onclick="openLightbox(this)">
+                        <img src="images/meownet1.jpg" alt="Meownet — Full board">
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(this)">
+                        <img src="images/meownet2.jpg" alt="Meownet — Cat face with TFT eye">
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(this)">
+                        <img src="images/meownet3.jpg" alt="Meownet — Ball collector with copper tape">
+                    </div>
+                </div>
+                <p class="gallery-hint">← Scroll to view all images →</p>
+            </div>
+
+            <div class="reflection">
+                <h3>Overview</h3>
+                <p>
+                    The board is a hand-painted black cat with brass nails as the pachinko field
+                    and a 3D-printed five-channel ball collector at the bottom. Three slots are
+                    "food," two are "poison," and two stepper-driven arms partway down the
+                    playfield swing to deflect balls away from over-represented poison channels —
+                    Meownet's job is to keep herself alive.
+                </p>
+                <p>
+                    Detection uses copper tape contact switches: two strips per channel with a
+                    small gap, bridged by the metal ball as it rolls through. A runtime monitor
+                    written in RTLola watches the distribution and only triggers broadcasts at
+                    meaningful inflection points, rather than flooding ESP-NOW on every ball drop.
+                    Arm behavior is proportional — the more skewed a channel becomes, the further
+                    its corresponding arm tilts.
+                </p>
+                <p>
+                    The trickiest lesson was pin budgeting on the ESP32. We lost an afternoon to
+                    the input-only pins (34, 35, 36, 39) silently failing on <code>digitalWrite</code>
+                    with no error — splitting the work across three boards wasn't just
+                    architectural, it was a hardware necessity.
+                </p>
+                <p>
+                    <a href="https://mimansakant.github.io/meownet/" style="color: var(--accent); text-decoration: none;">
+                        → View Full Documentation
+                    </a>
+                </p>
+            </div>
+        </div>
+        <!-- ── Project 5 closes ── -->
+
+        <!-- ── Project 6: Mini Golf ── -->
+        <div class="project">
+            <div class="project-header">
+                <h2>Mini Golf</h2>
+                <p class="project-subtitle">
+                    An interactive embedded mini golf system built around multiple ESP32
+                    microcontrollers communicating wirelessly via ESP-NOW. Sensors detect when
+                    the ball is sunk, triggering a celebration animation on a TFT display and an
+                    audio fanfare, while a stepper-motor-driven lighthouse door oscillates as a
+                    moving obstacle. Final project for COMS3930, built with Kristy Martinez and
+                    Victoria Cao.
+                </p>
+            </div>
+
+            <div class="image-gallery">
+                <div class="gallery-container">
+                    <div class="gallery-item" onclick="openLightbox(this)">
+                        <img src="images/minigolf1.jpg" alt="Mini Golf — Course view">
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(this)">
+                        <img src="images/minigolf2.jpg" alt="Mini Golf — Lighthouse hole">
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(this)">
+                        <img src="images/minigolf3.jpg" alt="Mini Golf — Hardware build">
+                    </div>
+                </div>
+                <p class="gallery-hint">← Scroll to view all images →</p>
+            </div>
+
+            <div class="reflection">
+                <h3>Overview</h3>
+                <p>
+                    Three ESP32 boards handle different responsibilities: a Ball Sensor ESP32
+                    reads two IR/photoresistor inputs at the lighthouse hole and broadcasts a
+                    trigger over ESP-NOW; a Congrats Display ESP32 (TTGO T-Display) receives that
+                    trigger and renders a scrolling "CONGRATULATIONS!!!!" animation; and a third
+                    Motor ESP32 runs standalone, driving a stepper through half-step sequencing
+                    to swing the lighthouse door back and forth as a moving obstacle.
+                </p>
+                <p>
+                    A Python script on a connected laptop listens on serial for ball detection
+                    events and plays a celebration <code>.wav</code> via <code>afplay</code>,
+                    bridging the embedded system to the host audio. Rendering on the TFT goes
+                    through an off-screen sprite to eliminate flicker, and ESP-NOW receive
+                    callbacks set flags that are checked in the main loop to avoid ISR
+                    re-entrancy issues.
+                </p>
+                <p>
+                    <a href="coms3930-mini-golf/" style="color: var(--accent); text-decoration: none;">
+                        → View Full Documentation
+                    </a>
+                </p>
+            </div>
+        </div>
+        <!-- ── Project 6 closes ── -->
 
     </div>                                              <!-- CONTAINER closes -->
 
