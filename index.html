@@ -400,6 +400,33 @@
         .peek-strip img:nth-child(4) { transition-delay: 0.15s; }
         .peek-strip img:nth-child(5) { transition-delay: 0.2s; }
 
+        /* chip peek (CES, photography) */
+        .peek-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .peek-chips span {
+            font-size: 0.85rem;
+            color: var(--text-primary);
+            padding: 0.3rem 0.85rem;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            opacity: 0;
+            transform: translateY(4px);
+            transition: opacity 0.35s ease, transform 0.35s ease, border-color 0.3s ease;
+        }
+
+        .portfolio-link:hover .peek-chips span,
+        .portfolio-link:focus-visible .peek-chips span { opacity: 1; transform: none; }
+
+        .peek-chips span:nth-child(2) { transition-delay: 0.04s; }
+        .peek-chips span:nth-child(3) { transition-delay: 0.08s; }
+        .peek-chips span:nth-child(4) { transition-delay: 0.12s; }
+        .peek-chips span:nth-child(5) { transition-delay: 0.16s; }
+        .peek-chips span:nth-child(6) { transition-delay: 0.2s; }
+
         /* ===== Social links ===== */
         .social-links {
             display: flex;
@@ -503,10 +530,13 @@
                     <div class="portfolio-link-title">Creative Embedded Systems Portfolio</div>
                     <div class="portfolio-link-desc">Explore my work in embedded systems, soldering projects, and creative hardware design</div>
                     <div class="peek"><div class="peek-inner"><div class="peek-content">
-                        <div class="peek-strip" style="--n: 3">
-                            <img src="images/thumbs/ces-1.jpg" alt="" loading="lazy">
-                            <img src="images/thumbs/ces-2.jpg" alt="" loading="lazy">
-                            <img src="images/thumbs/ces-3.jpg" alt="" loading="lazy">
+                        <div class="peek-chips">
+                            <span>Manhattan Skyline Soldered</span>
+                            <span>Flashing Jet PCB</span>
+                            <span>Rainfall</span>
+                            <span>Radio Building</span>
+                            <span>Meownet</span>
+                            <span>Mini Golf</span>
                         </div>
                     </div></div></div>
                 </a>
@@ -515,12 +545,10 @@
                     <div class="portfolio-link-title">Photography</div>
                     <div class="portfolio-link-desc">Check out my photos from around the world!</div>
                     <div class="peek"><div class="peek-inner"><div class="peek-content">
-                        <div class="peek-strip" style="--n: 5">
-                            <img src="images/thumbs/photo-1.jpg" alt="" loading="lazy">
-                            <img src="images/thumbs/photo-2.jpg" alt="" loading="lazy">
-                            <img src="images/thumbs/photo-3.jpg" alt="" loading="lazy">
-                            <img src="images/thumbs/photo-4.jpg" alt="" loading="lazy">
-                            <img src="images/thumbs/photo-5.jpg" alt="" loading="lazy">
+                        <div class="peek-chips">
+                            <span>New York</span>
+                            <span>California</span>
+                            <span>Travel</span>
                         </div>
                     </div></div></div>
                 </a>
